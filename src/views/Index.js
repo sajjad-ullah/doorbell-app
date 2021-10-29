@@ -14,6 +14,7 @@ export default function Index() {
   console.log("x = ",x);
   var token="";
   useEffect(() => {
+    // take all users from the firestore
     onSnapshot(collection(db,"Users"),(snapshot)=>{
   
       console.log(snapshot.docs.map((doc) =>{ 
@@ -27,7 +28,7 @@ export default function Index() {
         });
    
   },[gettoken]);
-  
+  //send notification to the user
   console.log("token = ",gettoken);
   const requestOptions = {
     method: 'POST',
